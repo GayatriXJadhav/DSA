@@ -14,19 +14,14 @@ public:
          ListNode *dNode=new ListNode(-1,head);
          ListNode *p=dNode;
          ListNode *temp=head;
-        set<int>st;
+        unordered_set<int>st;
         for(int i=0;i<nums.size();i++){
            st.insert(nums[i]);
         }
         while(temp!=NULL ){
             if(st.find(temp->val)!=st.end()){
-                
-
                 p->next=temp->next;
                 temp=temp->next;
-                
-               
-                
             }
             else
             {
@@ -37,3 +32,8 @@ public:
         return dNode->next;
     }
 };
+                
+                
+               
+
+                
