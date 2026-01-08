@@ -1,15 +1,17 @@
 class Solution {
 public:
     int numberOfSubstrings(string s) {
-        int lastseen[3]={-1,-1,-1};
-        int cnt=0;
-        for(int i=0;i<s.size();i++){
-            lastseen[s[i]-'a']=i;
-            if(lastseen[0]!=-1 && lastseen[1]!=-1 && lastseen[2]!=-1){
-                cnt=cnt+(1 + min(lastseen[0],min(lastseen[1],lastseen[2])) );
-
-            }
+       int left=0, res=0;
+       vector<int>freq(3,0);
+      for(int right=0;right<s.length();right++){
+        freq[s[right]-'a']++;
+        while(freq[0] >0 && freq[1]>0 && freq[2]>0){
+         res+=s.length()-right;
+          freq[s[left]-'a']--;
+        left++;
         }
-        return cnt;
+       }
+       return res;
     }
+
 };
