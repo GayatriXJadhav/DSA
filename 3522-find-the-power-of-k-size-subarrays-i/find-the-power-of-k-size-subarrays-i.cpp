@@ -12,7 +12,7 @@ public:
         vector<int> res;
         while (r < nums.size()) {
             len = r - l + 1;
-            while (len == k) {
+            if (len == k) {
                 int maxele = 0;
                 if (isConsecutiveSorted(nums, l, k) == true) {
                     maxele = *max_element(nums.begin() + l, nums.begin() + r + 1);
