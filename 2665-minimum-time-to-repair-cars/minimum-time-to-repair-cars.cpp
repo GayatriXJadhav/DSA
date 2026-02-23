@@ -13,7 +13,8 @@ public:
 
     long long repairCars(vector<int>& ranks, int cars) {
         long long max_rank = *max_element(ranks.begin(), ranks.end());
-        long long low = 1, high = max_rank * (long long)cars * cars;
+        long long min_rank=*min_element(ranks.begin(),ranks.end());
+        long long low = 1, high = min_rank * (long long)cars * cars;
         long long ans = -1;
         while (low <= high) {
             long long mid = (low + high) / 2;
