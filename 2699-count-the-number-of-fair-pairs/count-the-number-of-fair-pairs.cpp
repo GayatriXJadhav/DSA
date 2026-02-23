@@ -4,7 +4,7 @@ public:
         int n = nums.size();
         sort(nums.begin(),nums.end());
         long long count = 0;
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; i++) {
             int left =
                 lower_bound(nums.begin() + i + 1, nums.end(), lower - nums[i]) -
                 nums.begin();
