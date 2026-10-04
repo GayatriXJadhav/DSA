@@ -18,7 +18,7 @@ public:
     }
     int maximumTastiness(vector<int>& price, int k) {
         sort(price.begin(),price.end());
-        int low=1;
+        int low=0;
         int n=price.size();
         int high=price[n-1] - price[0];
         while(low<=high){
